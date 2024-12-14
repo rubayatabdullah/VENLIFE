@@ -81,7 +81,7 @@ body {
   text-align: center;
 }
 
-.home-container button {
+.find {
   padding: 1rem 6rem;
   font-size: 16px;
   font-weight: 600;
@@ -173,6 +173,12 @@ body {
   padding-inline: 23px;
 }
 
+.van-list-container h1 {
+  font-size: 56px;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -257,9 +263,73 @@ i[class*="van-type-"] {
 }
 
 .van-info {
-  background-color: #ffcc8d;
+  background-color: #ffead0;
   padding: 1rem;
   border-radius: 5px;
+}
+
+.van-detail-container {
+  padding: 27px;
+}
+
+.van-detail-container .back-button {
+  color: black;
+  text-decoration: none;
+}
+
+.van-detail-container .back-button span {
+  text-decoration: underline;
+}
+
+.van-detail {
+  display: flex;
+  flex-direction: row;
+  color: #161616;
+  gap: 1rem;
+  align-items: self-start;
+}
+
+.specification {
+  margin-top: 3.5rem;
+}
+
+.specification h2 {
+  margin-top: 1rem;
+}
+
+.specification button {
+  margin-top: 1rem;
+}
+
+.van-detail img {
+  border-radius: 5px;
+  margin-block: 47px;
+  width: 40%;
+}
+
+.van-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.van-detail > i {
+  align-self: flex-start;
+}
+
+.van-detail .van-price {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.van-detail .van-price span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.van-detail .link-button {
+  background-color: #ff8c38;
+  color: white;
+  font-size: 1.125rem;
 }
 
 /* Responsive Styles */
@@ -308,6 +378,15 @@ i[class*="van-type-"] {
     gap: 30px;
     margin-top: 50px;
   }
+  .van-detail {
+    flex-direction: column;
+  }
+  .van-detail img {
+    width: 80%;
+  }
+  .specification {
+    margin-top: 0.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -350,5 +429,14 @@ i[class*="van-type-"] {
     justify-items: center;
     gap: 25px;
     margin-top: 40px;
+  }
+  .van-detail {
+    flex-direction: column;
+  }
+  .van-detail img {
+    width: 80%;
+  }
+  .specification {
+    margin-top: 0.5rem;
   }
 }
