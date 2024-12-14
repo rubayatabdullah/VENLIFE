@@ -166,6 +166,9 @@ body {
   font-size: 8px;
   font-weight: 300;
   color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
