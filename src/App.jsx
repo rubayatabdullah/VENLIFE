@@ -1,8 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./components/About";
-import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Navbar from "./components/Navbar";
+import Dashboard from "./components/Host/Dashboard";
+import HostLayout from "./components/Host/HostLayout";
+import Income from "./components/Host/Income";
+import Review from "./components/Host/Review";
+import Layout from "./components/Layout";
 import VanDetails from "./components/VanDetails";
 import Vans from "./components/VansList";
 import "./server";
@@ -10,14 +13,19 @@ import "./server";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/vans" element={<Vans />} />
-        <Route path="/vans/:id" element={<VanDetails />} />
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="vans" element={<Vans />} />
+          <Route path="vans/:id" element={<VanDetails />} />
+          <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="review" element={<Review />} />
+          </Route>
+        </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }

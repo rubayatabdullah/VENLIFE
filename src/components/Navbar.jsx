@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import icon from "./images/logo.png";
 
-export default function Navbar() {
+export default function Header() {
   return (
     <div className="navbar-container">
       <div className="navbar">
@@ -9,6 +9,7 @@ export default function Navbar() {
           <img src={icon} alt="icon" />
         </Link>
         <nav>
+          <Link to="/host">Host</Link>
           <Link to="/about">About</Link>
           <Link to="/vans">Vans</Link>
         </nav>
