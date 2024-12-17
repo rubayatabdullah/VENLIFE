@@ -3,6 +3,11 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Dashboard from "./components/Host/Dashboard";
 import HostLayout from "./components/Host/HostLayout";
+import HostVansDetail from "./components/Host/HostVanDetails";
+import HostVanInfo from "./components/Host/HostVanInfo";
+import HostVanPhotos from "./components/Host/HostVanPhotos";
+import HostVans from "./components/Host/HostVans";
+import HostVanPricing from "./components/Host/HostVansPricing";
 import Income from "./components/Host/Income";
 import Review from "./components/Host/Review";
 import Layout from "./components/Layout";
@@ -22,7 +27,13 @@ function App() {
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
+            <Route path="vans" element={<HostVans />} />
             <Route path="review" element={<Review />} />
+            <Route path="vans/:id" element={<HostVansDetail />}>
+              <Route index element={<HostVanInfo />} />
+              <Route path="photos" element={<HostVanPhotos />} />
+              <Route path="pricing" element={<HostVanPricing />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
